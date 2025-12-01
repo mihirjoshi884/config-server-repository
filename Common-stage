@@ -1,0 +1,8 @@
+# ============================
+# RESOURCE SERVER (JWT VALIDATION)
+# ============================
+# Your authorization server’s issuer (must match AuthorizationServerSettings)
+spring.security.oauth2.resourceserver.jwt.issuer-uri=http://auth-server
+
+# OPTIONAL: JWK set URI (Spring usually resolves it automatically)
+# spring.security.oauth2.resourceserver.jwt.jwk-set-uri=http://authserver/oauth2/jwks
