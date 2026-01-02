@@ -1,0 +1,5 @@
+authservice:
+  base-uri: http://auth-service:8081
+
+userservice:
+  base-uri: http://user-service:8082
