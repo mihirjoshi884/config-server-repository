@@ -1,0 +1,5 @@
+authservice:
+  base-uri: http://localhost:8081
+
+userservice:
+  base-uri: http://localhost:8082
