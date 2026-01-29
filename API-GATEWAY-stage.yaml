@@ -1,9 +1,13 @@
-# Staging environment - Docker Service Names
+
 userservice:
-  base-uri: http://user-service:8082
+  base-uri: http://localhost:8082
 
 authservice:
-  base-uri: http://auth-service:8081
+  base-uri: http://localhost:8081
 
 notificationservice:
-  base-uri: http://notification-service:8084
+  base-uri: http://localhost:8084
+
+angular:
+  base-uri: http://localhost:4200
+
