@@ -1,27 +1,27 @@
 # =========================================================================
-# API GATEWAY CONFIGURATION FOR STAGE PROFILE (DOCKER)
+# API GATEWAY CONFIGURATION FOR DEV PROFILE
 # =========================================================================
 
 userservice:
-  base-uri: http://obtb-user-service:8082
+  base-uri: http://localhost:8082
 
 authservice:
-  base-uri: http://obtb-auth-service:8081
+  base-uri: http://localhost:8081
 
 configserver:
-  base-uri: http://obtb-config-server:8083
+  base-uri: http://localhost:8083
 
 notificationservice:
-  base-uri: http://obtb-notification-service:8084
+  base-uri: http://localhost:8084
 
 transactionservice:
-  base-uri: http://obtb-transaction-service:8085
+  base-uri: http://localhost:8085
 
 busService:
-  base-uri: http://obtb-bus-service:8086
+  base-uri: http://localhost:8086
 
 bookingService:
-  base-uri: http://obtb-booking-service:8087
+  base-uri: http://localhost:8087
 
 # Angular runs outside the cluster
 angular:
@@ -44,12 +44,12 @@ spring:
 
         provider:
           my-auth-server:
-            issuer-uri: ${oauth.issuer-uri}
-            authorization-uri: ${authservice.base-uri}/oauth2/authorize
-            token-uri: ${authservice.base-uri}/oauth2/token
-            jwk-set-uri: ${authservice.base-uri}/oauth2/jwks
+            issuer-uri: "${oauth.issuer-uri:http://localhost:8081}"
+            authorization-uri: "${authservice.base-uri:http://localhost:8081}/oauth2/authorize"
+            token-uri: "${authservice.base-uri:http://localhost:8081}/oauth2/token"
+            jwk-set-uri: "${authservice.base-uri:http://localhost:8081}/oauth2/jwks"
 
       resourceserver:
         jwt:
-          issuer-uri: ${oauth.issuer-uri}
-          jwk-set-uri: ${authservice.base-uri}/oauth2/jwks
+          issuer-uri: "${oauth.issuer-uri:http://localhost:8081}"
+          jwk-set-uri: "${authservice.base-uri:http://localhost:8081}/oauth2/jwks"
