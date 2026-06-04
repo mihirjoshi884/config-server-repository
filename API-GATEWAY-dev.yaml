@@ -1,13 +1,29 @@
+# =========================================================================
+# API GATEWAY CONFIGURATION FOR STAGE PROFILE (DOCKER)
+# =========================================================================
 
 userservice:
-  base-uri: http://localhost:8082
+  base-uri: http://obtb-user-service:8082
 
 authservice:
-  base-uri: http://localhost:8081
+  base-uri: http://obtb-auth-service:8081
+
+configserver:
+  base-uri: http://obtb-config-server:8083
 
 notificationservice:
-  base-uri: http://localhost:8084
+  base-uri: http://obtb-notification-service:8084
 
+transactionservice:
+  base-uri: http://obtb-transaction-service:8085
+
+busService:
+  base-uri: http://obtb-bus-service:8086
+
+bookingService:
+  base-uri: http://obtb-booking-service:8087
+
+# Angular runs outside the cluster
 angular:
   base-uri: http://localhost:4200
 
