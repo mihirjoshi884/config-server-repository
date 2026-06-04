@@ -10,3 +10,30 @@ notificationservice:
 
 angular:
   base-uri: http://localhost:4200
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          api-gateway:
+            provider: my-auth-server
+            client-id: obtb-api-gateway
+            client-secret: obtb-api-gateway-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/api-gateway"
+            scope: openid, profile
+            client-authentication-method: client_secret_basic
+
+        provider:
+          my-auth-server:
+            issuer-uri: ${oauth.issuer-uri}
+            authorization-uri: ${authservice.base-uri}/oauth2/authorize
+            token-uri: ${authservice.base-uri}/oauth2/token
+            jwk-set-uri: ${authservice.base-uri}/oauth2/jwks
+
+      resourceserver:
+        jwt:
+          issuer-uri: ${oauth.issuer-uri}
+          jwk-set-uri: ${authservice.base-uri}/oauth2/jwks
