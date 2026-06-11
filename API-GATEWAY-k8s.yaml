@@ -43,7 +43,9 @@ spring:
 
         provider:
           my-auth-server:
-            issuer-uri: "${oauth.issuer-uri:https://disgrace-shampoo-detonator.ngrok-free.dev/auth}"
+            authorization-uri: ${public-auth-service.base-uri}/oauth2/authorize
+            token-uri: ${authservice.base-uri}/oauth2/token
+            jwk-set-uri: ${authservice.base-uri}/oauth2/jwks
             
       resourceserver:
         jwt:
