@@ -43,12 +43,12 @@ spring:
 
         provider:
           my-auth-server:
-            issuer-uri: "${oauth.issuer-uri:http://obtb-auth-service:8081}"
+            issuer-uri: "${oauth.issuer-uri:https://disgrace-shampoo-detonator.ngrok-free.dev/auth}"
             authorization-uri: "${authservice.base-uri:http://obtb-auth-service:8081}/oauth2/authorize"
             token-uri: "${authservice.base-uri:http://obtb-auth-service:8081}/oauth2/token"
             jwk-set-uri: "${authservice.base-uri:http://obtb-auth-service:8081}/oauth2/jwks"
 
       resourceserver:
         jwt:
-          issuer-uri: "${oauth.issuer-uri:http://obtb-auth-service:8081}"
+          issuer-uri: "${oauth.issuer-uri:https://disgrace-shampoo-detonator.ngrok-free.dev/auth}"
           jwk-set-uri: "${authservice.base-uri:http://obtb-auth-service:8081}/oauth2/jwks"
