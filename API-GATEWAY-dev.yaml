@@ -53,3 +53,11 @@ spring:
         jwt:
           issuer-uri: "${oauth.issuer-uri:http://localhost:8081}"
           jwk-set-uri: "${authservice.base-uri:http://localhost:8081}/oauth2/jwks"
+
+gateway:
+  routes:
+    auth-prefix: /auth
+    user-prefix: /user
+    bus-prefix: /bus
+    booking-prefix: /booking
+    txn-prefix: /txn
